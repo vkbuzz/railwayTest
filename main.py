@@ -4,6 +4,11 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from pydantic import BaseModel, ConfigDict
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
+from dotenv import load_dotenv
+
+# Load variables from the .env file into the environment
+load_dotenv()
+
 
 # 1. Database Configuration & Environment Validation
 DATABASE_URL = os.getenv("DATABASE_URL")
